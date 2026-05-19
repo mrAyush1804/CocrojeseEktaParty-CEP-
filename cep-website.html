@@ -1,0 +1,990 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Cocrojese Ekta Party (CEP) — छोटा कीड़ा, बड़ा इरादा</title>
+<link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi:ital@0;1&family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600;700&family=Noto+Serif+Devanagari:wght@400;600;700&display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --saffron:#FF6600;
+  --saffron-dark:#CC4400;
+  --saffron-light:#FF9944;
+  --green:#138808;
+  --green-light:#1a9e0a;
+  --navy:#003366;
+  --ink:#0d0d0d;
+  --paper:#FFF9F0;
+  --paper2:#FFF3E0;
+  --muted:#888;
+  --border:#E0D5C5;
+  --white:#ffffff;
+  --yellow:#FFD700;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'DM Sans',sans-serif;background:var(--paper);color:var(--ink);overflow-x:hidden;}
+
+/* NAVBAR */
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:var(--navy);border-bottom:3px solid var(--saffron);}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;padding:0 2rem;height:56px;max-width:1400px;margin:0 auto;}
+.nav-logo{display:flex;align-items:center;gap:12px;}
+.nav-logo .bug{font-size:28px;}
+.nav-logo .name{color:white;font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:2px;}
+.nav-logo .sub{color:var(--saffron);font-size:10px;letter-spacing:3px;text-transform:uppercase;}
+.nav-links{display:flex;gap:0;}
+.nav-links a{color:rgba(255,255,255,0.8);text-decoration:none;font-size:12px;font-weight:500;letter-spacing:1px;text-transform:uppercase;padding:0 14px;height:56px;display:flex;align-items:center;border-bottom:3px solid transparent;transition:all 0.2s;}
+.nav-links a:hover{color:var(--saffron);border-bottom-color:var(--saffron);}
+.lang-toggle{display:flex;gap:4px;}
+.lang-btn{background:transparent;border:1px solid rgba(255,255,255,0.3);color:white;padding:4px 10px;border-radius:4px;font-size:11px;cursor:pointer;transition:all 0.2s;}
+.lang-btn.active,.lang-btn:hover{background:var(--saffron);border-color:var(--saffron);}
+
+/* TICKER */
+.ticker-wrap{background:var(--saffron);overflow:hidden;height:36px;display:flex;align-items:center;}
+.ticker-label{background:var(--green);color:white;padding:0 16px;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;height:36px;display:flex;align-items:center;white-space:nowrap;flex-shrink:0;}
+.ticker-track{display:flex;animation:ticker 35s linear infinite;white-space:nowrap;}
+.ticker-item{color:var(--ink);font-size:12px;font-weight:600;padding:0 40px;}
+.ticker-item::before{content:"★ ";}
+@keyframes ticker{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* HERO */
+.hero{min-height:100vh;background:var(--navy);position:relative;display:flex;flex-direction:column;justify-content:center;padding-top:100px;overflow:hidden;}
+.hero-bg{position:absolute;inset:0;opacity:0.04;}
+.hero-bg svg{width:100%;height:100%;}
+.hero-content{max-width:1200px;margin:0 auto;padding:2rem;position:relative;z-index:1;}
+.tricolor-bar{height:6px;width:100%;background:linear-gradient(to right,var(--saffron) 33.3%,white 33.3% 66.6%,var(--green) 66.6%);margin-bottom:2rem;border-radius:3px;}
+.hero-eyebrow{font-family:'Bebas Neue',sans-serif;font-size:12px;letter-spacing:6px;color:var(--saffron);margin-bottom:1rem;text-transform:uppercase;}
+.hero-h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(56px,9vw,120px);color:white;line-height:0.9;margin-bottom:0.5rem;}
+.hero-h1 span{color:var(--saffron);}
+.hero-tagline{font-family:'Noto Serif Devanagari',serif;font-size:clamp(18px,3vw,28px);color:rgba(255,255,255,0.7);margin-bottom:0.5rem;}
+.hero-motto{font-size:14px;letter-spacing:4px;color:var(--saffron-light);text-transform:uppercase;margin-bottom:3rem;}
+.hero-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.1);border-radius:8px;overflow:hidden;margin-bottom:2rem;}
+.stat-box{background:rgba(0,0,0,0.3);padding:1.5rem;text-align:center;}
+.stat-num{font-family:'Bebas Neue',sans-serif;font-size:48px;color:var(--saffron);line-height:1;}
+.stat-label{font-size:11px;color:rgba(255,255,255,0.6);letter-spacing:2px;text-transform:uppercase;margin-top:4px;}
+.hero-ctas{display:flex;gap:12px;flex-wrap:wrap;}
+.btn-primary{background:var(--saffron);color:white;border:none;padding:14px 32px;font-size:14px;font-weight:700;letter-spacing:2px;text-transform:uppercase;cursor:pointer;border-radius:2px;text-decoration:none;display:inline-block;transition:all 0.2s;}
+.btn-primary:hover{background:var(--saffron-dark);}
+.btn-outline{background:transparent;color:white;border:2px solid rgba(255,255,255,0.4);padding:14px 32px;font-size:14px;font-weight:700;letter-spacing:2px;text-transform:uppercase;cursor:pointer;border-radius:2px;text-decoration:none;display:inline-block;transition:all 0.2s;}
+.btn-outline:hover{border-color:var(--saffron);color:var(--saffron);}
+
+/* SECTION WRAPPER */
+section{padding:5rem 2rem;}
+.section-inner{max-width:1200px;margin:0 auto;}
+.section-header{margin-bottom:3rem;}
+.section-label{font-size:10px;letter-spacing:5px;text-transform:uppercase;color:var(--saffron);font-weight:700;margin-bottom:8px;}
+.section-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(36px,6vw,64px);color:var(--navy);line-height:1;}
+.section-rule{height:3px;width:60px;background:var(--saffron);margin-top:12px;}
+
+/* MANIFESTO */
+#manifesto{background:white;}
+.manifesto-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);}
+.manifesto-col{background:var(--paper);}
+.mani-head{background:var(--navy);color:white;padding:1rem 1.5rem;font-size:12px;letter-spacing:3px;text-transform:uppercase;font-weight:600;}
+.mani-head.saffron{background:var(--saffron);}
+.mani-head.green{background:var(--green);}
+.mani-item{padding:1rem 1.5rem;border-bottom:1px solid var(--border);display:flex;gap:12px;align-items:flex-start;}
+.mani-item:last-child{border-bottom:none;}
+.mani-icon{font-size:18px;flex-shrink:0;margin-top:2px;}
+.mani-text{font-size:14px;line-height:1.5;}
+.mani-text.devanagari{font-family:'Noto Serif Devanagari',serif;}
+
+/* NEWS */
+#news{background:var(--paper2);}
+.news-grid{display:grid;grid-template-columns:2fr 1fr;gap:2rem;}
+.news-main .news-featured{background:white;border:1px solid var(--border);border-top:4px solid var(--saffron);}
+.news-featured .nf-img{height:260px;background:linear-gradient(135deg,var(--navy),#001a33);display:flex;align-items:center;justify-content:center;}
+.news-featured .nf-img span{font-family:'Bebas Neue',sans-serif;font-size:64px;color:var(--saffron);opacity:0.5;}
+.news-featured .nf-body{padding:1.5rem;}
+.news-tag{display:inline-block;background:var(--saffron);color:white;font-size:9px;letter-spacing:3px;text-transform:uppercase;padding:3px 10px;margin-bottom:10px;}
+.news-featured h3{font-family:'Bebas Neue',sans-serif;font-size:32px;color:var(--navy);line-height:1.1;margin-bottom:8px;}
+.news-featured p{font-size:13px;color:var(--muted);line-height:1.6;}
+.news-meta{font-size:11px;color:var(--muted);margin-top:12px;display:flex;gap:16px;}
+.news-sidebar .news-item{background:white;border:1px solid var(--border);padding:1rem;margin-bottom:12px;border-left:3px solid var(--green);}
+.news-item h4{font-size:14px;font-weight:600;color:var(--navy);margin-bottom:6px;line-height:1.3;}
+.news-item .ni-meta{font-size:11px;color:var(--muted);}
+.news-item .ni-tag{display:inline-block;background:var(--green);color:white;font-size:9px;letter-spacing:2px;padding:2px 8px;margin-bottom:6px;}
+.post-news-btn{width:100%;background:var(--navy);color:white;border:none;padding:14px;font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;cursor:pointer;margin-bottom:12px;transition:background 0.2s;}
+.post-news-btn:hover{background:var(--saffron);}
+
+/* VOTING */
+#vote{background:var(--navy);}
+#vote .section-title{color:white;}
+#vote .section-label{color:var(--saffron-light);}
+.vote-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-bottom:2rem;}
+.candidate-card{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);padding:1.5rem;text-align:center;border-radius:4px;transition:all 0.2s;cursor:pointer;}
+.candidate-card:hover,.candidate-card.voted{border-color:var(--saffron);background:rgba(255,102,0,0.1);}
+.candidate-avatar{width:72px;height:72px;border-radius:50%;background:var(--saffron);display:flex;align-items:center;justify-content:center;margin:0 auto 12px;font-family:'Bebas Neue',sans-serif;font-size:28px;color:white;}
+.candidate-name{color:white;font-weight:600;margin-bottom:4px;}
+.candidate-state{font-size:12px;color:rgba(255,255,255,0.5);}
+.vote-btn{margin-top:12px;width:100%;background:transparent;border:1px solid rgba(255,255,255,0.3);color:white;padding:8px;font-size:11px;letter-spacing:2px;text-transform:uppercase;cursor:pointer;border-radius:2px;transition:all 0.2s;}
+.vote-btn:hover,.voted .vote-btn{background:var(--saffron);border-color:var(--saffron);}
+.poll-results{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);padding:1.5rem;border-radius:4px;}
+.poll-title{color:white;font-size:13px;letter-spacing:2px;text-transform:uppercase;margin-bottom:1.5rem;}
+.poll-bar-wrap{margin-bottom:1rem;}
+.poll-bar-label{display:flex;justify-content:space-between;font-size:12px;color:rgba(255,255,255,0.7);margin-bottom:6px;}
+.poll-bar{height:8px;background:rgba(255,255,255,0.1);border-radius:4px;overflow:hidden;}
+.poll-fill{height:100%;border-radius:4px;transition:width 1s ease;}
+.poll-note{font-size:11px;color:rgba(255,255,255,0.4);text-align:center;margin-top:1rem;letter-spacing:1px;}
+
+/* JOIN FORM */
+#join{background:white;}
+.join-layout{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;}
+.join-info h2{font-family:'Bebas Neue',sans-serif;font-size:52px;color:var(--navy);line-height:1;}
+.join-info h2 span{color:var(--saffron);}
+.join-tagline{font-family:'Noto Serif Devanagari',serif;font-size:18px;color:var(--green);margin:1rem 0;}
+.join-rules{margin-top:1.5rem;}
+.join-rule{display:flex;gap:12px;align-items:flex-start;margin-bottom:12px;padding:12px;background:var(--paper);border-left:3px solid var(--saffron);}
+.jr-icon{font-size:20px;}
+.jr-text{font-size:13px;line-height:1.5;}
+.form-group{margin-bottom:1rem;}
+.form-group label{display:block;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--navy);margin-bottom:6px;}
+.form-group input,.form-group select,.form-group textarea{width:100%;border:2px solid var(--border);padding:10px 14px;font-size:14px;font-family:'DM Sans',sans-serif;border-radius:2px;background:var(--paper);outline:none;transition:border-color 0.2s;}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--saffron);}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
+.form-submit{width:100%;background:var(--saffron);color:white;border:none;padding:16px;font-size:13px;font-weight:700;letter-spacing:3px;text-transform:uppercase;cursor:pointer;border-radius:2px;transition:background 0.2s;margin-top:0.5rem;}
+.form-submit:hover{background:var(--saffron-dark);}
+.form-success{display:none;background:var(--green);color:white;padding:1rem;text-align:center;border-radius:2px;font-weight:600;}
+
+/* ASK CEP */
+#ask{background:var(--paper2);}
+.ask-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;}
+.qa-list .qa-item{background:white;border:1px solid var(--border);margin-bottom:1rem;overflow:hidden;}
+.qa-q{padding:1rem 1.25rem;background:var(--navy);color:white;font-size:13px;font-weight:600;display:flex;gap:10px;align-items:flex-start;}
+.qa-q::before{content:"Q";background:var(--saffron);color:white;width:20px;height:20px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;flex-shrink:0;}
+.qa-a{padding:1rem 1.25rem;font-size:13px;line-height:1.6;color:#444;border-left:3px solid var(--green);}
+.qa-form-box{background:white;border:1px solid var(--border);border-top:4px solid var(--saffron);padding:2rem;}
+.qa-form-box h3{font-family:'Bebas Neue',sans-serif;font-size:28px;color:var(--navy);margin-bottom:1rem;}
+
+/* TRANSPARENCY */
+#transparency{background:var(--navy);}
+#transparency .section-title{color:white;}
+#transparency .section-label{color:rgba(255,255,255,0.5);}
+.trans-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-bottom:2rem;}
+.trans-card{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);padding:1.5rem;border-radius:4px;text-align:center;}
+.trans-icon{font-size:36px;margin-bottom:12px;}
+.trans-num{font-family:'Bebas Neue',sans-serif;font-size:42px;color:var(--saffron);}
+.trans-label{font-size:11px;color:rgba(255,255,255,0.6);letter-spacing:2px;text-transform:uppercase;}
+.expense-table{width:100%;border-collapse:collapse;background:rgba(255,255,255,0.03);}
+.expense-table th{background:rgba(255,102,0,0.2);color:var(--saffron);font-size:11px;letter-spacing:2px;text-transform:uppercase;padding:10px 16px;text-align:left;}
+.expense-table td{color:rgba(255,255,255,0.8);font-size:13px;padding:10px 16px;border-bottom:1px solid rgba(255,255,255,0.05);}
+.expense-table tr:last-child td{border:none;}
+.status-badge{font-size:10px;padding:3px 10px;border-radius:20px;font-weight:700;letter-spacing:1px;}
+.status-done{background:rgba(19,136,8,0.2);color:#4AE34A;}
+.status-pending{background:rgba(255,215,0,0.2);color:var(--yellow);}
+
+/* APP PREVIEW */
+#app{background:white;}
+.app-layout{display:grid;grid-template-columns:1fr 1.4fr;gap:4rem;align-items:center;}
+.phone-mock{width:240px;height:480px;background:var(--navy);border-radius:32px;border:8px solid var(--ink);margin:0 auto;position:relative;overflow:hidden;}
+.phone-screen{background:var(--paper);height:100%;display:flex;flex-direction:column;}
+.phone-status{background:var(--navy);color:white;height:28px;display:flex;align-items:center;justify-content:center;font-size:9px;letter-spacing:2px;}
+.phone-header{background:var(--saffron);padding:12px;text-align:center;font-family:'Bebas Neue',sans-serif;font-size:16px;color:white;letter-spacing:2px;}
+.phone-menu{padding:12px;display:grid;grid-template-columns:1fr 1fr;gap:6px;}
+.phone-tile{background:var(--navy);color:white;padding:10px 6px;text-align:center;border-radius:6px;font-size:9px;font-weight:600;letter-spacing:1px;}
+.phone-tile span{display:block;font-size:18px;margin-bottom:4px;}
+.app-features{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
+.app-feature{padding:1.25rem;border:1px solid var(--border);border-left:3px solid var(--saffron);}
+.af-title{font-weight:700;font-size:14px;color:var(--navy);margin-bottom:4px;}
+.af-desc{font-size:12px;color:var(--muted);line-height:1.5;}
+.coming-soon{display:inline-block;background:var(--saffron);color:white;font-size:9px;letter-spacing:3px;padding:3px 10px;margin-bottom:12px;}
+
+/* FOOTER */
+footer{background:#050e1a;border-top:4px solid var(--saffron);}
+.footer-shloka{background:var(--navy);padding:3rem 2rem;text-align:center;}
+.shloka-text{font-family:'Noto Serif Devanagari',serif;font-size:clamp(18px,3vw,28px);color:white;line-height:1.6;margin-bottom:1rem;}
+.shloka-text em{color:var(--saffron);}
+.shloka-trans{font-size:13px;color:rgba(255,255,255,0.5);letter-spacing:2px;}
+.footer-main{max-width:1200px;margin:0 auto;padding:3rem 2rem;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:3rem;}
+.footer-brand .fb-logo{font-family:'Bebas Neue',sans-serif;font-size:32px;color:white;letter-spacing:4px;}
+.footer-brand .fb-logo span{color:var(--saffron);}
+.footer-brand p{font-size:12px;color:rgba(255,255,255,0.4);margin-top:8px;line-height:1.6;max-width:240px;}
+.footer-col h4{color:rgba(255,255,255,0.6);font-size:10px;letter-spacing:4px;text-transform:uppercase;margin-bottom:12px;}
+.footer-col a{display:block;color:rgba(255,255,255,0.4);font-size:13px;text-decoration:none;margin-bottom:8px;transition:color 0.2s;}
+.footer-col a:hover{color:var(--saffron);}
+.footer-bottom{border-top:1px solid rgba(255,255,255,0.05);padding:1rem 2rem;text-align:center;font-size:11px;color:rgba(255,255,255,0.2);max-width:1200px;margin:0 auto;}
+.tricolor-footer{height:4px;background:linear-gradient(to right,var(--saffron) 33.3%,white 33.3% 66.6%,var(--green) 66.6%);}
+
+/* NOTIFICATION */
+.toast{position:fixed;bottom:24px;right:24px;background:var(--green);color:white;padding:12px 24px;border-radius:4px;font-size:14px;font-weight:600;z-index:9999;transform:translateY(100px);opacity:0;transition:all 0.4s;}
+.toast.show{transform:translateY(0);opacity:1;}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .hero-stats{grid-template-columns:repeat(2,1fr);}
+  .manifesto-grid,.news-grid,.join-layout,.ask-grid,.trans-grid,.app-layout{grid-template-columns:1fr;}
+  .vote-grid{grid-template-columns:1fr 1fr;}
+  .footer-main{grid-template-columns:1fr 1fr;}
+  .nav-links{display:none;}
+  .form-row{grid-template-columns:1fr;}
+}
+@media(max-width:600px){
+  section{padding:3rem 1rem;}
+  .vote-grid{grid-template-columns:1fr;}
+  .app-features{grid-template-columns:1fr;}
+}
+
+/* ANIMATIONS */
+.fade-in{opacity:0;transform:translateY(20px);transition:opacity 0.6s ease,transform 0.6s ease;}
+.fade-in.visible{opacity:1;transform:translateY(0);}
+
+/* NEWSPAPER DIVIDERS */
+.newspaper-rule{border:none;border-top:3px double var(--border);margin:3rem 0;}
+.newspaper-rule.dark{border-color:rgba(255,255,255,0.1);}
+</style>
+</head>
+<body>
+
+<!-- TOAST -->
+<div class="toast" id="toast"></div>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <div class="nav-logo">
+      <div class="bug">🪳</div>
+      <div>
+        <div class="name">CEP</div>
+        <div class="sub">Cocrojese Ekta Party</div>
+      </div>
+    </div>
+    <div class="nav-links">
+      <a href="#manifesto" data-key="nav_manifesto">Manifesto</a>
+      <a href="#news" data-key="nav_news">News</a>
+      <a href="#vote" data-key="nav_vote">Vote</a>
+      <a href="#join" data-key="nav_join">Join</a>
+      <a href="#ask" data-key="nav_ask">Ask CEP</a>
+      <a href="#volunteer">Join Team</a>
+      <a href="#transparency" data-key="nav_transparency">Transparency</a>
+      <a href="#app" data-key="nav_app">App</a>
+    </div>
+    <div class="lang-toggle">
+      <button class="lang-btn active" onclick="setLang('en')">EN</button>
+      <button class="lang-btn" onclick="setLang('hi')">हिं</button>
+      <button class="lang-btn" onclick="setLang('sa')">संस्</button>
+    </div>
+  </div>
+</nav>
+
+<!-- BREAKING NEWS TICKER -->
+<div style="margin-top:56px;">
+<div class="ticker-wrap">
+  <div class="ticker-label">Breaking</div>
+  <div style="overflow:hidden;flex:1;">
+    <div class="ticker-track" id="ticker">
+      <span class="ticker-item">CEP launches official website — Transparency First</span>
+      <span class="ticker-item">50% Youth Leadership Initiative announced by CEP</span>
+      <span class="ticker-item">CEP to file RTI for public fund disclosure in 5 states</span>
+      <span class="ticker-item">Anti-Corruption Tech Demo by CEP Youth Wing — Next Week</span>
+      <span class="ticker-item">CEP recruits 1,200 volunteers across India in 30 days</span>
+      <span class="ticker-item">New Education Reform proposal submitted by CEP Think Tank</span>
+      <span class="ticker-item">CEP launches official website — Transparency First</span>
+      <span class="ticker-item">50% Youth Leadership Initiative announced by CEP</span>
+      <span class="ticker-item">CEP to file RTI for public fund disclosure in 5 states</span>
+      <span class="ticker-item">Anti-Corruption Tech Demo by CEP Youth Wing — Next Week</span>
+      <span class="ticker-item">CEP recruits 1,200 volunteers across India in 30 days</span>
+      <span class="ticker-item">New Education Reform proposal submitted by CEP Think Tank</span>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-bg">
+    <svg viewBox="0 0 1400 800" preserveAspectRatio="xMidYMid slice">
+      <text x="50%" y="60%" text-anchor="middle" font-family="serif" font-size="400" fill="white">🪳</text>
+    </svg>
+  </div>
+  <div class="hero-content">
+    <div class="tricolor-bar"></div>
+    <div class="hero-eyebrow">🇮🇳 Official Website — Cocrojese Ekta Party</div>
+    <div class="hero-h1" id="hero-h1">CHHOTA<br/><span>KEEDA,</span><br/>BADA<br/>IRAADA</div>
+    <div class="hero-tagline" id="hero-tagline">छोटा कीड़ा, बड़ा इरादा</div>
+    <div class="hero-motto" id="hero-motto">Baatein Nahi — Kaam Karenge</div>
+    <div class="hero-stats">
+      <div class="stat-box">
+        <div class="stat-num">0</div>
+        <div class="stat-label">Members (Growing)</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-num">50%</div>
+        <div class="stat-label">Youth Leadership Goal</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-num">₹0</div>
+        <div class="stat-label">Funds Collected</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-num">₹0</div>
+        <div class="stat-label">Expenses So Far</div>
+      </div>
+    </div>
+    <div class="hero-ctas">
+      <a href="#join" class="btn-primary" data-key="hero_join">Join CEP Now</a>
+      <a href="#manifesto" class="btn-outline" data-key="hero_manifesto">Read Manifesto</a>
+    </div>
+  </div>
+</section>
+
+<!-- MANIFESTO -->
+<section id="manifesto">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-label" data-key="sec_manifesto_label">Our Manifesto</div>
+      <div class="section-title" data-key="sec_manifesto_title">WHAT WE STAND FOR</div>
+      <div class="section-rule"></div>
+    </div>
+    <div class="manifesto-grid" style="grid-template-columns:repeat(4,1fr);">
+      <!-- English -->
+      <div class="manifesto-col">
+        <div class="mani-head">🇬🇧 English</div>
+        <div class="mani-item"><div class="mani-icon">👥</div><div class="mani-text">50% youth in leadership at every level</div></div>
+        <div class="mani-item"><div class="mani-icon">🎓</div><div class="mani-text">Minimum 12th pass education for all candidates</div></div>
+        <div class="mani-item"><div class="mani-icon">📂</div><div class="mani-text">All work and funds fully public — zero secrets</div></div>
+        <div class="mani-item"><div class="mani-icon">💼</div><div class="mani-text">Jobs via creation — not promises, real employment</div></div>
+        <div class="mani-item"><div class="mani-icon">💻</div><div class="mani-text">Anti-corruption enforced through technology</div></div>
+        <div class="mani-item"><div class="mani-icon">📚</div><div class="mani-text">Real-life, practical education reforms for youth</div></div>
+      </div>
+      <!-- Hinglish -->
+      <div class="manifesto-col">
+        <div class="mani-head" style="background:#7B1FA2;">🗣️ Hinglish</div>
+        <div class="mani-item"><div class="mani-icon">👥</div><div class="mani-text">50% youth ko leadership mein lena hai — har level pe</div></div>
+        <div class="mani-item"><div class="mani-icon">🎓</div><div class="mani-text">Minimum 12th pass hona zaroori hai — koi exception nahi</div></div>
+        <div class="mani-item"><div class="mani-icon">📂</div><div class="mani-text">Har kharcha public hoga — kuch bhi chhupayenge nahi</div></div>
+        <div class="mani-item"><div class="mani-icon">💼</div><div class="mani-text">Jobs create karenge — sirf promise nahi, real kaam</div></div>
+        <div class="mani-item"><div class="mani-icon">💻</div><div class="mani-text">Technology se corruption tod denge — system se</div></div>
+        <div class="mani-item"><div class="mani-icon">📚</div><div class="mani-text">Practical education — jo zindagi mein kaam aaye</div></div>
+      </div>
+      <!-- Hindi -->
+      <div class="manifesto-col">
+        <div class="mani-head saffron">🇮🇳 हिंदी</div>
+        <div class="mani-item"><div class="mani-icon">👥</div><div class="mani-text devanagari">50% युवा नेतृत्व — हर स्तर पर</div></div>
+        <div class="mani-item"><div class="mani-icon">🎓</div><div class="mani-text devanagari">न्यूनतम 12वीं पास — उम्मीदवारों के लिए अनिवार्य</div></div>
+        <div class="mani-item"><div class="mani-icon">📂</div><div class="mani-text devanagari">हर खर्च सार्वजनिक — कोई छुपाई नहीं</div></div>
+        <div class="mani-item"><div class="mani-icon">💼</div><div class="mani-text devanagari">रोजगार सृजन — वादे नहीं, काम</div></div>
+        <div class="mani-item"><div class="mani-icon">💻</div><div class="mani-text devanagari">टेक्नोलॉजी से भ्रष्टाचार खत्म</div></div>
+        <div class="mani-item"><div class="mani-icon">📚</div><div class="mani-text devanagari">व्यवहारिक शिक्षा — जीवन से जुड़ी</div></div>
+      </div>
+      <!-- Sanskrit -->
+      <div class="manifesto-col">
+        <div class="mani-head green">📿 संस्कृत</div>
+        <div class="mani-item"><div class="mani-icon">👥</div><div class="mani-text devanagari">युवनेतृत्वं पञ्चाशत् प्रतिशतम्</div></div>
+        <div class="mani-item"><div class="mani-icon">🎓</div><div class="mani-text devanagari">द्वादश उत्तीर्णम् अनिवार्यम्</div></div>
+        <div class="mani-item"><div class="mani-icon">📂</div><div class="mani-text devanagari">सर्वं सार्वजनिकम् — न किञ्चित् गुप्तम्</div></div>
+        <div class="mani-item"><div class="mani-icon">💼</div><div class="mani-text devanagari">रोजगारसृजनम् — न केवलं वाचः</div></div>
+        <div class="mani-item"><div class="mani-icon">💻</div><div class="mani-text devanagari">तंत्रज्ञानद्वारा भ्रष्टाचार-निवारणम्</div></div>
+        <div class="mani-item"><div class="mani-icon">📚</div><div class="mani-text devanagari">व्यावहारिक-शिक्षणं जीवनसम्बद्धम्</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NEWS -->
+<section id="news">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-label">Latest Updates</div>
+      <div class="section-title">CEP NEWSROOM</div>
+      <div class="section-rule"></div>
+    </div>
+    <div style="background:#FFF8E1;border:2px dashed #F9A825;padding:1rem 1.5rem;margin-bottom:2rem;display:flex;align-items:center;gap:14px;border-radius:4px;">
+      <span style="font-size:28px;">🚧</span>
+      <div>
+        <div style="font-family:'Bebas Neue',sans-serif;font-size:18px;color:#E65100;letter-spacing:2px;">UNDER DEVELOPMENT</div>
+        <div style="font-size:12px;color:#555;margin-top:2px;">News posting system, user submissions aur admin approval — sab build ho raha hai. Neeche jo news hain wo sirf placeholder hain — asli news jald publish hogi.</div>
+      </div>
+    </div>
+    <div class="news-grid">
+      <div class="news-main">
+        <div class="news-featured fade-in">
+          <div class="nf-img"><span>CEP</span></div>
+          <div class="nf-body">
+            <div class="news-tag">Breaking</div>
+            <h3>CEP Officially Launches — India's First Youth-Driven Transparent Party</h3>
+            <p>The Cocrojese Ekta Party officially launches its national campaign with a commitment to zero hidden spending, 50% youth leadership, and technology-driven governance. Founder states: "We are not here to give speeches — we are here to work."</p>
+            <div class="news-meta">
+              <span>📅 May 2026</span>
+              <span>✍️ CEP Press Desk</span>
+              <span>👁 12,400 views</span>
+            </div>
+          </div>
+        </div>
+        <div style="margin-top:1rem;">
+          <button class="post-news-btn" onclick="showToast('News submission form coming soon — Admin approval system active!')">+ Post Community News</button>
+        </div>
+      </div>
+      <div class="news-sidebar">
+        <div class="news-item">
+          <div class="ni-tag">Education</div>
+          <h4>CEP Think Tank Proposes Skill-Based Curriculum Reform</h4>
+          <div class="ni-meta">📅 Apr 2026 · 4 min read</div>
+        </div>
+        <div class="news-item">
+          <div class="ni-tag">Anti-Corruption</div>
+          <h4>RTI Portal Beta Live — 400 Requests Filed in Week 1</h4>
+          <div class="ni-meta">📅 Apr 2026 · 2 min read</div>
+        </div>
+        <div class="news-item">
+          <div class="ni-tag">Youth Wing</div>
+          <h4>1,200 Volunteers Join CEP Across 14 States</h4>
+          <div class="ni-meta">📅 Mar 2026 · 3 min read</div>
+        </div>
+        <div class="news-item">
+          <div class="ni-tag">Manifesto</div>
+          <h4>Minimum 12th Pass Rule Gets Massive Youth Support — Survey</h4>
+          <div class="ni-meta">📅 Mar 2026 · 5 min read</div>
+        </div>
+        <div class="news-item">
+          <div class="ni-tag">Transparency</div>
+          <h4>Full Expense Report for March 2026 Published — Public Access</h4>
+          <div class="ni-meta">📅 Apr 2026 · 1 min read</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VOTING -->
+<section id="vote">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-label">Public Participation</div>
+      <div class="section-title">CAST YOUR VOICE</div>
+      <div class="section-rule"></div>
+    </div>
+    <div style="background:rgba(255,215,0,0.12);border:2px dashed var(--yellow);padding:1rem 1.5rem;margin-bottom:2rem;display:flex;align-items:center;gap:14px;border-radius:4px;">
+      <span style="font-size:28px;">🚧</span>
+      <div>
+        <div style="font-family:'Bebas Neue',sans-serif;font-size:18px;color:var(--yellow);letter-spacing:2px;">UNDER DEVELOPMENT</div>
+        <div style="font-size:12px;color:rgba(255,255,255,0.6);margin-top:2px;">Voting system abhi build ho raha hai — Real candidates aur verified login jald aayega. Abhi sirf demo mode hai.</div>
+      </div>
+    </div>
+    <div class="vote-grid" id="candidateGrid">
+      <div class="candidate-card" id="c1" onclick="castVote(1,'Priya Sharma')">
+        <div class="candidate-avatar">PS</div>
+        <div class="candidate-name">Priya Sharma</div>
+        <div class="candidate-state">Maharashtra • Age 26</div>
+        <button class="vote-btn" id="vb1">Vote ✓</button>
+      </div>
+      <div class="candidate-card" id="c2" onclick="castVote(2,'Arjun Meena')">
+        <div class="candidate-avatar">AM</div>
+        <div class="candidate-name">Arjun Meena</div>
+        <div class="candidate-state">Rajasthan • Age 24</div>
+        <button class="vote-btn" id="vb2">Vote ✓</button>
+      </div>
+      <div class="candidate-card" id="c3" onclick="castVote(3,'Kavita Reddy')">
+        <div class="candidate-avatar" style="background:var(--green);">KR</div>
+        <div class="candidate-name">Kavita Reddy</div>
+        <div class="candidate-state">Telangana • Age 28</div>
+        <button class="vote-btn" id="vb3">Vote ✓</button>
+      </div>
+    </div>
+    <div class="poll-results">
+      <div class="poll-title">📊 Live Poll Results — Favorite CEP Representative</div>
+      <div class="poll-bar-wrap">
+        <div class="poll-bar-label"><span>Priya Sharma</span><span id="pct1">38%</span></div>
+        <div class="poll-bar"><div class="poll-fill" id="fill1" style="width:38%;background:var(--saffron);"></div></div>
+      </div>
+      <div class="poll-bar-wrap">
+        <div class="poll-bar-label"><span>Arjun Meena</span><span id="pct2">35%</span></div>
+        <div class="poll-bar"><div class="poll-fill" id="fill2" style="width:35%;background:var(--green);"></div></div>
+      </div>
+      <div class="poll-bar-wrap">
+        <div class="poll-bar-label"><span>Kavita Reddy</span><span id="pct3">27%</span></div>
+        <div class="poll-bar"><div class="poll-fill" id="fill3" style="width:27%;background:var(--yellow);"></div></div>
+      </div>
+      <div class="poll-note">One device = one vote · Verified voter login coming with CEP App</div>
+    </div>
+  </div>
+</section>
+
+<!-- JOIN FORM -->
+<section id="join">
+  <div class="section-inner">
+    <div class="join-layout">
+      <div class="join-info">
+        <div class="section-label">Join the Movement</div>
+        <h2>BE <span>PART</span> OF THE CHANGE</h2>
+        <div class="join-tagline">जहाँ जवाब नहीं, वहाँ युवा जवाब है।</div>
+        <p style="font-size:13px;color:var(--muted);line-height:1.7;margin-bottom:1.5rem;">We are building India's most transparent political community. Every member matters. Every voice counts. No VIPs — just workers.</p>
+        <div class="join-rules">
+          <div class="join-rule"><div class="jr-icon">📋</div><div class="jr-text"><strong>Minimum 12th Pass</strong> — Education matters. Knowledge leads to better decisions.</div></div>
+          <div class="join-rule"><div class="jr-icon">🕐</div><div class="jr-text"><strong>Age 18–35</strong> — Youth priority, but all are welcome to support.</div></div>
+          <div class="join-rule"><div class="jr-icon">🤝</div><div class="jr-text"><strong>Work, Not Words</strong> — CEP members are evaluated by action, not rhetoric.</div></div>
+          <div class="join-rule"><div class="jr-icon">🔍</div><div class="jr-text"><strong>Full Transparency</strong> — All member contributions are publicly acknowledged.</div></div>
+        </div>
+      </div>
+      <div>
+        <div id="joinForm">
+          <div class="form-group"><label>Full Name *</label><input type="text" id="f-name" placeholder="Your full name"/></div>
+          <div class="form-row">
+            <div class="form-group"><label>Age *</label><input type="number" id="f-age" placeholder="Your age" min="15" max="99"/></div>
+            <div class="form-group"><label>State *</label>
+              <select id="f-state">
+                <option value="">Select State</option>
+                <option>Uttar Pradesh</option><option>Maharashtra</option><option>Bihar</option>
+                <option>West Bengal</option><option>Rajasthan</option><option>Madhya Pradesh</option>
+                <option>Tamil Nadu</option><option>Karnataka</option><option>Gujarat</option>
+                <option>Delhi</option><option>Haryana</option><option>Other</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group"><label>Education *</label>
+            <select id="f-edu">
+              <option value="">Select Education Level</option>
+              <option>12th Pass</option><option>Diploma</option><option>Graduate (B.A./B.Sc./B.Com)</option>
+              <option>Engineering/Technical Graduate</option><option>Post Graduate</option><option>PhD</option>
+            </select>
+          </div>
+          <div class="form-group"><label>Your Skills</label><input type="text" id="f-skills" placeholder="e.g. Technology, Law, Agriculture, Communication..."/></div>
+          <div class="form-group"><label>Why Join CEP? *</label><textarea id="f-why" rows="4" placeholder="Tell us what drives you to join — in your own words..."></textarea></div>
+          <button class="form-submit" onclick="submitJoinForm()">🪳 Submit Application — Join CEP</button>
+        </div>
+        <div class="form-success" id="joinSuccess">✅ Application Received! We'll contact you within 72 hours. Welcome to CEP!</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ASK CEP -->
+<section id="ask">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-label">Public Accountability</div>
+      <div class="section-title">ASK CEP ANYTHING</div>
+      <div class="section-rule"></div>
+    </div>
+    <div class="ask-grid">
+      <div class="qa-list">
+        <div class="qa-item">
+          <div class="qa-q">How will CEP stop corruption?</div>
+          <div class="qa-a">Every rupee spent by CEP will be publicly logged on this website and the app. We use device-verified transaction records, open ledgers, and mandatory RTI compliance. No cash dealings — everything is traceable.</div>
+        </div>
+        <div class="qa-item">
+          <div class="qa-q">How will jobs be created?</div>
+          <div class="qa-a">Through skill-match employment boards, local manufacturing incentives, and direct youth startup funding. We reject "promise-based" schemes — our jobs plan links government contracts directly to measurable employment output.</div>
+        </div>
+        <div class="qa-item">
+          <div class="qa-q">Why minimum 12th pass for candidates?</div>
+          <div class="qa-a">A basic minimum educational standard ensures that people making policy have at least a foundational level of literacy and reasoning skills. It's not about elitism — it's about accountability and competence.</div>
+        </div>
+        <div class="qa-item">
+          <div class="qa-q">Is CEP a registered political party?</div>
+          <div class="qa-a">CEP is currently a registered youth political community actively working through the Election Commission process. Our legal team is finalizing formal registration. We operate with full transparency even as an unofficial entity.</div>
+        </div>
+      </div>
+      <div class="qa-form-box">
+        <h3>Ask Your Question</h3>
+        <p style="font-size:13px;color:var(--muted);margin-bottom:1.5rem;line-height:1.6;">Submit any question about CEP's policies, plans, or candidates. Approved answers are published publicly here.</p>
+        <div class="form-group"><label>Your Name</label><input type="text" id="q-name" placeholder="Optional"/></div>
+        <div class="form-group"><label>Your Question *</label><textarea id="q-text" rows="5" placeholder="What do you want CEP to answer publicly?"></textarea></div>
+        <div class="form-group"><label>Category</label>
+          <select id="q-cat">
+            <option>Anti-Corruption</option><option>Employment</option><option>Education</option>
+            <option>Youth Policy</option><option>Transparency</option><option>General</option>
+          </select>
+        </div>
+        <button class="form-submit" onclick="submitQuestion()">Submit Question to CEP →</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRANSPARENCY DASHBOARD -->
+<section id="transparency">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-label">Sab On-Paper</div>
+      <div class="section-title" style="color:white;">TRANSPARENCY DASHBOARD</div>
+      <div class="section-rule"></div>
+    </div>
+    <div style="background:rgba(255,215,0,0.1);border:2px dashed rgba(255,215,0,0.5);padding:1rem 1.5rem;margin-bottom:2rem;display:flex;align-items:center;gap:14px;border-radius:4px;">
+      <span style="font-size:28px;">🚧</span>
+      <div>
+        <div style="font-family:'Bebas Neue',sans-serif;font-size:18px;color:var(--yellow);letter-spacing:2px;">UNDER DEVELOPMENT — ABHI KOI DATA NAHI</div>
+        <div style="font-size:12px;color:rgba(255,255,255,0.6);margin-top:2px;">Party abhi early formation stage mein hai. Jab bhi koi fund collect hoga ya kharcha hoga — yahan live publish hoga. Zero se start — zero chhupana.</div>
+      </div>
+    </div>
+    <div class="trans-grid">
+      <div class="trans-card">
+        <div class="trans-icon">💰</div>
+        <div class="trans-num">₹0</div>
+        <div class="trans-label">Total Collected</div>
+      </div>
+      <div class="trans-card">
+        <div class="trans-icon">📤</div>
+        <div class="trans-num">₹0</div>
+        <div class="trans-label">Total Spent</div>
+      </div>
+      <div class="trans-card">
+        <div class="trans-icon">📋</div>
+        <div class="trans-num">0</div>
+        <div class="trans-label">Work Reports</div>
+      </div>
+      <div class="trans-card">
+        <div class="trans-icon">📁</div>
+        <div class="trans-num">100%</div>
+        <div class="trans-label">Public Access</div>
+      </div>
+    </div>
+    <table class="expense-table">
+      <thead>
+        <tr><th>Date</th><th>Category</th><th>Description</th><th>Amount</th><th>Status</th></tr>
+      </thead>
+      <tbody>
+        <tr><td colspan="5" style="text-align:center;color:rgba(255,255,255,0.4);padding:2rem;font-size:13px;letter-spacing:2px;">NO TRANSACTIONS YET — PARTY IS IN EARLY FORMATION STAGE · ZERO FUNDS COLLECTED</td></tr>
+      </tbody>
+    </table>
+    <p style="font-size:11px;color:rgba(255,255,255,0.3);margin-top:1rem;text-align:center;letter-spacing:2px;">ALL EXPENSES WILL BE AUDITABLE BY ANY CITIZEN FROM DAY ONE · FULL DOCUMENTS WILL BE PUBLISHED</p>
+  </div>
+</section>
+
+<!-- APP PREVIEW -->
+<section id="app">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-label">Coming Soon</div>
+      <div class="section-title">CEP MOBILE APP</div>
+      <div class="section-rule"></div>
+    </div>
+    <div style="background:#E8F5E9;border:2px dashed #388E3C;padding:1rem 1.5rem;margin-bottom:2rem;display:flex;align-items:center;gap:14px;border-radius:4px;">
+      <span style="font-size:28px;">🚧</span>
+      <div>
+        <div style="font-family:'Bebas Neue',sans-serif;font-size:18px;color:#1B5E20;letter-spacing:2px;">UNDER DEVELOPMENT — APP ABHI NAHI AAYA</div>
+        <div style="font-size:12px;color:#555;margin-top:2px;">CEP App abhi development phase mein hai. Koi launch date confirm nahi hai. Tech volunteers ki zaroorat hai — <a href="#volunteer" style="color:var(--green);font-weight:700;">Join karo</a> aur app bananay mein help karo!</div>
+      </div>
+    </div>
+    <div class="app-layout">
+      <div>
+        <div class="coming-soon">COMING SOON</div>
+        <h3 style="font-family:'Bebas Neue',sans-serif;font-size:36px;color:var(--navy);margin-bottom:1rem;line-height:1.1;">Everything you need to hold power accountable — in your pocket.</h3>
+        <p style="font-size:13px;color:var(--muted);line-height:1.7;margin-bottom:2rem;">The CEP App will be India's first political accountability app — not just a party app. Any citizen can use it.</p>
+        <div class="app-features">
+          <div class="app-feature"><div class="af-title">🚨 Report Corruption</div><div class="af-desc">Submit geotagged corruption reports directly from your phone with evidence upload.</div></div>
+          <div class="app-feature"><div class="af-title">📄 RTI Helper</div><div class="af-desc">File Right to Information requests with one tap — guided and auto-filled.</div></div>
+          <div class="app-feature"><div class="af-title">💼 Jobs Board</div><div class="af-desc">Verified local job listings tied to government skill-match programs.</div></div>
+          <div class="app-feature"><div class="af-title">🏛 Candidate Tracker</div><div class="af-desc">Track every promise made by every candidate — with public proof logs.</div></div>
+          <div class="app-feature"><div class="af-title">🗳 Verified Voting</div><div class="af-desc">Aadhaar-linked digital voting for party decisions and candidate feedback.</div></div>
+          <div class="app-feature"><div class="af-title">📰 CEP News Feed</div><div class="af-desc">Real-time party updates, community news, and verified work reports.</div></div>
+        </div>
+        <div style="margin-top:1.5rem;display:flex;gap:12px;flex-wrap:wrap;">
+          <button class="btn-primary" onclick="showToast('App launching soon! You'll be notified via email.')">Notify Me on Launch</button>
+        </div>
+      </div>
+      <div class="phone-mock">
+        <div class="phone-screen">
+          <div class="phone-status">CEP — 9:41 AM · 🇮🇳</div>
+          <div class="phone-header">🪳 CEP APP</div>
+          <div style="padding:8px 12px;background:var(--saffron);color:white;font-size:9px;text-align:center;letter-spacing:1px;">BAATEIN NAHI — KAAM KARENGE</div>
+          <div class="phone-menu">
+            <div class="phone-tile"><span>🚨</span>REPORT</div>
+            <div class="phone-tile"><span>📄</span>RTI</div>
+            <div class="phone-tile"><span>💼</span>JOBS</div>
+            <div class="phone-tile"><span>🗳</span>VOTE</div>
+            <div class="phone-tile"><span>📰</span>NEWS</div>
+            <div class="phone-tile"><span>🏛</span>TRACK</div>
+          </div>
+          <div style="padding:10px 12px;">
+            <div style="background:var(--paper);border-radius:6px;padding:8px;margin-bottom:6px;">
+              <div style="font-size:8px;font-weight:700;color:var(--saffron);letter-spacing:1px;margin-bottom:4px;">LIVE TRANSPARENCY</div>
+              <div style="font-size:9px;color:var(--navy);">₹3.1L spent · 100% documented</div>
+              <div style="height:4px;background:#eee;border-radius:2px;margin-top:6px;overflow:hidden;"><div style="height:100%;width:74%;background:var(--green);border-radius:2px;"></div></div>
+            </div>
+            <div style="background:var(--navy);border-radius:6px;padding:8px;">
+              <div style="font-size:8px;font-weight:700;color:var(--saffron);letter-spacing:1px;margin-bottom:4px;">TODAY'S WORK LOG</div>
+              <div style="font-size:8px;color:rgba(255,255,255,0.7);">✅ RTI filed: Delhi Water Board</div>
+              <div style="font-size:8px;color:rgba(255,255,255,0.7);">✅ Youth rally: 340 attended</div>
+              <div style="font-size:8px;color:rgba(255,255,255,0.5);">⏳ Legal filing: In progress</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VOLUNTEER / JOIN TEAM -->
+<section id="volunteer" style="background:var(--paper2);">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-label">Abhi Koi Fund Nahi — Sirf Kaam Ka Junoon Chahiye</div>
+      <div class="section-title" style="color:var(--navy);">CEP TEAM MEIN APNA YOGDAN DO</div>
+      <div class="section-rule"></div>
+    </div>
+    <p style="font-size:15px;color:#555;max-width:700px;line-height:1.8;margin-bottom:2.5rem;font-family:'Noto Serif Devanagari',serif;">
+      अभी हमारे पास कोई fund नहीं है, कोई salary नहीं है — सिर्फ एक सपना है। अगर तुम सच में बदलाव चाहते हो, तो अपना हुनर दो। <strong>बाद में sab saath milenge.</strong>
+    </p>
+
+    <!-- ROLE CARDS -->
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;margin-bottom:3rem;">
+
+      <div class="vol-card" style="background:white;border:1px solid var(--border);border-top:4px solid var(--saffron);padding:1.5rem;">
+        <div style="font-size:32px;margin-bottom:10px;">🎬</div>
+        <div style="font-family:'Bebas Neue',sans-serif;font-size:20px;color:var(--navy);">Reel Creator</div>
+        <p style="font-size:12px;color:var(--muted);line-height:1.6;margin-top:6px;">CEP ke liye Instagram/YouTube Reels banao. Script to shoot to edit — sab kuch. Kaam proof hai.</p>
+        <div style="margin-top:12px;font-size:11px;color:var(--saffron);font-weight:700;letter-spacing:1px;">VOLUNTEER ROLE · UNPAID</div>
+      </div>
+
+      <div class="vol-card" style="background:white;border:1px solid var(--border);border-top:4px solid var(--green);padding:1.5rem;">
+        <div style="font-size:32px;margin-bottom:10px;">🌐</div>
+        <div style="font-family:'Bebas Neue',sans-serif;font-size:20px;color:var(--navy);">Networking Lead</div>
+        <p style="font-size:12px;color:var(--muted);line-height:1.6;margin-top:6px;">Apne college, mohalle, city mein CEP ko spread karo. Contacts jodo. Youth ko party se milao.</p>
+        <div style="margin-top:12px;font-size:11px;color:var(--green);font-weight:700;letter-spacing:1px;">VOLUNTEER ROLE · UNPAID</div>
+      </div>
+
+      <div class="vol-card" style="background:white;border:1px solid var(--border);border-top:4px solid var(--navy);padding:1.5rem;">
+        <div style="font-size:32px;margin-bottom:10px;">💻</div>
+        <div style="font-family:'Bebas Neue',sans-serif;font-size:20px;color:var(--navy);">Tech Volunteer</div>
+        <p style="font-size:12px;color:var(--muted);line-height:1.6;margin-top:6px;">Website maintain karo, app bananay mein help karo, database, backend ya frontend — koi bhi tech skill welcome hai.</p>
+        <div style="margin-top:12px;font-size:11px;color:var(--navy);font-weight:700;letter-spacing:1px;">VOLUNTEER ROLE · UNPAID</div>
+      </div>
+
+      <div class="vol-card" style="background:white;border:1px solid var(--border);border-top:4px solid #E91E8C;padding:1.5rem;">
+        <div style="font-size:32px;margin-bottom:10px;">📱</div>
+        <div style="font-family:'Bebas Neue',sans-serif;font-size:20px;color:var(--navy);">Social Media Manager</div>
+        <p style="font-size:12px;color:var(--muted);line-height:1.6;margin-top:6px;">Instagram, Twitter/X, Facebook, YouTube — CEP ke accounts chalao. Posts, stories, engagement sab sambhalo.</p>
+        <div style="margin-top:12px;font-size:11px;color:#E91E8C;font-weight:700;letter-spacing:1px;">VOLUNTEER ROLE · UNPAID</div>
+      </div>
+
+      <div class="vol-card" style="background:white;border:1px solid var(--border);border-top:4px solid #7B1FA2;padding:1.5rem;">
+        <div style="font-size:32px;margin-bottom:10px;">🏘️</div>
+        <div style="font-family:'Bebas Neue',sans-serif;font-size:20px;color:var(--navy);">Community Leader</div>
+        <p style="font-size:12px;color:var(--muted);line-height:1.6;margin-top:6px;">WhatsApp groups, Telegram channels, Discord — apne area mein CEP community banao aur logon ko jodo.</p>
+        <div style="margin-top:12px;font-size:11px;color:#7B1FA2;font-weight:700;letter-spacing:1px;">VOLUNTEER ROLE · UNPAID</div>
+      </div>
+
+      <div class="vol-card" style="background:white;border:1px solid var(--border);border-top:4px solid #F57C00;padding:1.5rem;">
+        <div style="font-size:32px;margin-bottom:10px;">✂️</div>
+        <div style="font-family:'Bebas Neue',sans-serif;font-size:20px;color:var(--navy);">Video Editor</div>
+        <p style="font-size:12px;color:var(--muted);line-height:1.6;margin-top:6px;">Raw footage lo, edit karo, captions lagao, music add karo. CEP ki visual identity tum banate ho.</p>
+        <div style="margin-top:12px;font-size:11px;color:#F57C00;font-weight:700;letter-spacing:1px;">VOLUNTEER ROLE · UNPAID</div>
+      </div>
+
+      <div class="vol-card" style="background:white;border:1px solid var(--border);border-top:4px solid #00796B;padding:1.5rem;">
+        <div style="font-size:32px;margin-bottom:10px;">📰</div>
+        <div style="font-family:'Bebas Neue',sans-serif;font-size:20px;color:var(--navy);">News Developer</div>
+        <p style="font-size:12px;color:var(--muted);line-height:1.6;margin-top:6px;">Ground se news cover karo. CEP activities, local issues, youth news — likhlo ya video banao aur publish karo.</p>
+        <div style="margin-top:12px;font-size:11px;color:#00796B;font-weight:700;letter-spacing:1px;">VOLUNTEER ROLE · UNPAID</div>
+      </div>
+
+    </div>
+
+    <!-- WHATSAPP CONNECT BOX -->
+    <div style="background:var(--navy);padding:2.5rem;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:2rem;">
+      <div>
+        <div style="font-size:11px;color:var(--saffron);letter-spacing:4px;text-transform:uppercase;margin-bottom:8px;">Direct Contact — Founder</div>
+        <div style="font-family:'Bebas Neue',sans-serif;font-size:36px;color:white;line-height:1;">Ready to Join the Team?</div>
+        <div style="font-family:'Noto Serif Devanagari',serif;font-size:16px;color:rgba(255,255,255,0.6);margin-top:6px;">Apna role batao, apna kaam batao — WhatsApp karo abhi</div>
+        <div style="margin-top:16px;display:flex;align-items:center;gap:12px;flex-wrap:wrap;">
+          <div style="font-family:'Bebas Neue',sans-serif;font-size:28px;color:var(--saffron);letter-spacing:2px;">📱 7415497473</div>
+          <div style="font-size:12px;color:rgba(255,255,255,0.4);">WhatsApp Only</div>
+        </div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:12px;">
+        <a href="https://wa.me/917415497473?text=Namaste!%20Main%20CEP%20mein%20volunteer%20karna%20chahta/chahti%20hoon.%20Mera%20role%3A%20" target="_blank"
+          style="background:#25D366;color:white;border:none;padding:16px 32px;font-size:13px;font-weight:700;letter-spacing:2px;text-transform:uppercase;cursor:pointer;text-decoration:none;display:inline-block;text-align:center;">
+          💬 WhatsApp Karo Abhi
+        </a>
+        <div style="font-size:10px;color:rgba(255,255,255,0.3);text-align:center;letter-spacing:1px;">MESSAGE FORMAT: Apna naam + kaunsa role + ek kaam ka example</div>
+      </div>
+    </div>
+
+    <!-- VOLUNTEER FORM -->
+    <div style="background:white;border:1px solid var(--border);border-top:4px solid var(--saffron);padding:2rem;margin-top:2rem;">
+      <div style="font-family:'Bebas Neue',sans-serif;font-size:28px;color:var(--navy);margin-bottom:4px;">Ya Yahan Form Bharo</div>
+      <p style="font-size:12px;color:var(--muted);margin-bottom:1.5rem;">Hum tumse 48 ghante mein WhatsApp par contact karenge.</p>
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:1rem;flex-wrap:wrap;">
+        <div class="form-group"><label>Tumhara Naam *</label><input type="text" id="v-name" placeholder="Full name"/></div>
+        <div class="form-group"><label>WhatsApp Number *</label><input type="text" id="v-wa" placeholder="10-digit number"/></div>
+        <div class="form-group"><label>Kaunsa Role Chahiye? *</label>
+          <select id="v-role">
+            <option value="">Role chuno</option>
+            <option>🎬 Reel Creator</option>
+            <option>🌐 Networking Lead</option>
+            <option>💻 Tech Volunteer</option>
+            <option>📱 Social Media Manager</option>
+            <option>🏘️ Community Leader</option>
+            <option>✂️ Video Editor</option>
+            <option>📰 News Developer</option>
+            <option>🤝 General Volunteer</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group"><label>Ek Kaam Batao Jo Tumne Pehle Kiya Ho (proof)</label><textarea id="v-proof" rows="3" placeholder="Koi reel banai, koi event organize ki, koi website banayi — kuch bhi..."></textarea></div>
+      <button class="form-submit" onclick="submitVolunteer()" style="max-width:320px;">🪳 Submit — Kaam Karenge!</button>
+      <div id="volSuccess" style="display:none;background:var(--green);color:white;padding:1rem;margin-top:1rem;text-align:center;font-weight:600;">✅ Form mila! 48 ghante mein WhatsApp par reply milega.</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-shloka">
+    <div class="shloka-text">
+      <em>कर्मण्येवाधिकारस्ते मा फलेषु कदाचन।</em><br/>
+      मा कर्मफलहेतुर्भूर्मा ते सङ्गोऽस्त्वकर्मणि॥
+    </div>
+    <div class="shloka-trans">"Do your duty — results are not in your control. Act. Always act." — Bhagavad Gita 2.47</div>
+  </div>
+  <div class="footer-main">
+    <div class="footer-brand">
+      <div class="fb-logo">🪳 <span>CEP</span></div>
+      <p>Cocrojese Ekta Party — A youth-driven movement for transparent, accountable, and effective governance in India.</p>
+      <div style="margin-top:1rem;">
+        <div style="font-size:11px;color:rgba(255,255,255,0.3);letter-spacing:2px;">CONTACT</div>
+        <div style="font-size:12px;color:rgba(255,255,255,0.5);margin-top:4px;">cep.india.official@gmail.com</div>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Pages</h4>
+      <a href="#home">Home</a>
+      <a href="#manifesto">Manifesto</a>
+      <a href="#news">News</a>
+      <a href="#vote">Vote</a>
+      <a href="#join">Join CEP</a>
+      <a href="#ask">Ask CEP</a>
+    </div>
+    <div class="footer-col">
+      <h4>Transparency</h4>
+      <a href="#transparency">Expense Reports</a>
+      <a href="#transparency">Work Logs</a>
+      <a href="#transparency">Public Documents</a>
+      <a href="#transparency">Access Logs</a>
+    </div>
+    <div class="footer-col">
+      <h4>Youth Lines</h4>
+      <a href="#">"Jahan jawab nahi, wahan yuva hai."</a>
+      <a href="#">"Work is proof."</a>
+      <a href="#">"Chhota keeda, bada iraada."</a>
+      <a href="#">"Karmanye vadhikaraste."</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 Cocrojese Ekta Party (CEP) · छोटा कीड़ा, बड़ा इरादा · Baatein Nahi, Kaam Karenge</p>
+  </div>
+  <div class="tricolor-footer"></div>
+</footer>
+
+<script>
+// LANGUAGE SYSTEM
+const translations = {
+  en: {
+    nav_manifesto:"Manifesto",nav_news:"News",nav_vote:"Vote",nav_join:"Join",nav_ask:"Ask CEP",
+    nav_transparency:"Transparency",nav_app:"App",hero_join:"Join CEP Now",hero_manifesto:"Read Manifesto",
+    sec_manifesto_label:"Our Manifesto",sec_manifesto_title:"WHAT WE STAND FOR"
+  },
+  hi: {
+    nav_manifesto:"घोषणापत्र",nav_news:"समाचार",nav_vote:"मतदान",nav_join:"जुड़ें",nav_ask:"CEP से पूछें",
+    nav_transparency:"पारदर्शिता",nav_app:"ऐप",hero_join:"अभी जुड़ें",hero_manifesto:"घोषणापत्र पढ़ें",
+    sec_manifesto_label:"हमारा घोषणापत्र",sec_manifesto_title:"हम किसके लिए खड़े हैं"
+  },
+  sa: {
+    nav_manifesto:"घोषणापत्रम्",nav_news:"समाचारम्",nav_vote:"मतम्",nav_join:"योजयतु",nav_ask:"CEP पृच्छतु",
+    nav_transparency:"पारदर्शिता",nav_app:"अनुप्रयोगः",hero_join:"अभी योजयतु",hero_manifesto:"पत्रं पठतु",
+    sec_manifesto_label:"अस्माकं घोषणापत्रम्",sec_manifesto_title:"वयं किमर्थं तिष्ठामः"
+  }
+};
+let currentLang = 'en';
+function setLang(lang){
+  currentLang = lang;
+  document.querySelectorAll('.lang-btn').forEach(b=>b.classList.remove('active'));
+  event.target.classList.add('active');
+  const t = translations[lang];
+  document.querySelectorAll('[data-key]').forEach(el=>{
+    if(t[el.dataset.key]) el.textContent = t[el.dataset.key];
+  });
+  if(lang==='hi'){
+    document.getElementById('hero-tagline').textContent='छोटा कीड़ा, बड़ा इरादा';
+    document.getElementById('hero-motto').textContent='बातें नहीं — काम करेंगे';
+  } else if(lang==='sa'){
+    document.getElementById('hero-tagline').textContent='क्षुद्रः कीटः, महत् मनसः';
+    document.getElementById('hero-motto').textContent='न वचनानि — कर्माणि करिष्यामः';
+  } else {
+    document.getElementById('hero-tagline').textContent='Chhota Keeda, Bada Iraada';
+    document.getElementById('hero-motto').textContent='Baatein Nahi — Kaam Karenge';
+  }
+}
+
+// COUNTER ANIMATION (removed - all zero now)
+
+// VOLUNTEER FORM
+function submitVolunteer(){
+  const name=document.getElementById('v-name').value.trim();
+  const wa=document.getElementById('v-wa').value.trim();
+  const role=document.getElementById('v-role').value;
+  if(!name||!wa||!role){showToast('⚠️ Naam, WhatsApp number aur role zaroori hai!');return;}
+  if(wa.length<10){showToast('⚠️ Sahi WhatsApp number daalo.');return;}
+  document.getElementById('volSuccess').style.display='block';
+  document.getElementById('v-name').value='';
+  document.getElementById('v-wa').value='';
+  document.getElementById('v-role').value='';
+  document.getElementById('v-proof').value='';
+  showToast('🪳 Shukriya! Hum 48 ghante mein contact karenge.');
+}
+
+// VOTING SYSTEM
+let voted = localStorage.getItem('cep_voted');
+let votes = JSON.parse(localStorage.getItem('cep_votes')||'{"1":380,"2":350,"3":270}');
+function updatePoll(){
+  const total = votes[1]+votes[2]+votes[3];
+  const p1=Math.round(votes[1]/total*100),p2=Math.round(votes[2]/total*100),p3=100-p1-p2;
+  document.getElementById('pct1').textContent=p1+'%';
+  document.getElementById('pct2').textContent=p2+'%';
+  document.getElementById('pct3').textContent=p3+'%';
+  document.getElementById('fill1').style.width=p1+'%';
+  document.getElementById('fill2').style.width=p2+'%';
+  document.getElementById('fill3').style.width=p3+'%';
+}
+function castVote(id, name){
+  if(voted){showToast('You have already voted! One device = one vote.');return;}
+  votes[id]+=1;
+  localStorage.setItem('cep_votes',JSON.stringify(votes));
+  localStorage.setItem('cep_voted','1');
+  voted='1';
+  document.getElementById('c'+id).classList.add('voted');
+  updatePoll();
+  showToast('✅ Vote cast for '+name+'! Thank you for participating.');
+}
+updatePoll();
+if(voted){document.querySelectorAll('.candidate-card').forEach(c=>c.style.opacity='0.7');}
+
+// JOIN FORM
+function submitJoinForm(){
+  const name=document.getElementById('f-name').value.trim();
+  const age=document.getElementById('f-age').value;
+  const state=document.getElementById('f-state').value;
+  const edu=document.getElementById('f-edu').value;
+  const why=document.getElementById('f-why').value.trim();
+  if(!name||!age||!state||!edu||!why){showToast('⚠️ Please fill all required fields.');return;}
+  if(parseInt(age)<12){showToast('⚠️ Minimum age to apply is 12.');return;}
+  document.getElementById('joinForm').style.display='none';
+  document.getElementById('joinSuccess').style.display='block';
+  showToast('🪳 Welcome to CEP, '+name+'!');
+}
+
+// ASK QUESTION
+function submitQuestion(){
+  const q=document.getElementById('q-text').value.trim();
+  if(!q){showToast('⚠️ Please write your question.');return;}
+  document.getElementById('q-text').value='';
+  document.getElementById('q-name').value='';
+  showToast('✅ Question submitted! It will be reviewed and answered publicly.');
+}
+
+// TOAST
+function showToast(msg){
+  const t=document.getElementById('toast');
+  t.textContent=msg;t.classList.add('show');
+  setTimeout(()=>t.classList.remove('show'),3500);
+}
+
+// FADE IN ON SCROLL
+const observer = new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');});
+},{threshold:0.1});
+document.querySelectorAll('.fade-in').forEach(el=>observer.observe(el));
+</script>
+</body>
+</html>
